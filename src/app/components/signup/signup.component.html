@@ -1,0 +1,27 @@
+<!-- src/app/signup/signup.component.html -->
+<div class="container">
+    <div class="form-container sign-up-container">
+      <form (ngSubmit)="onSubmit()">
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="First Name" [(ngModel)]="customer.FirstName" name="FirstName" required />
+        <input type="text" placeholder="Last Name" [(ngModel)]="customer.LastName" name="LastName" required />
+        <input type="email" placeholder="Email" [(ngModel)]="customer.Email" name="Email" required />
+        <input type="date" placeholder="Date of Birth" [(ngModel)]="customer.DateofBirth" name="DateOfBirth" required />
+        <input type="text" placeholder="Address" [(ngModel)]="customer.Address" name="Address" required />
+        <input type="text" placeholder="Phone Number" [(ngModel)]="customer.PhoneNumber" name="PhoneNumber" required />
+        <input type="text" placeholder="SSN" [(ngModel)]="customer.SSN" name="SSN" required />
+        <input type="text" placeholder="Employment Information" [(ngModel)]="customer.EmploymentInformation" name="EmploymentInformation" required />
+        <input type="password" placeholder="Password" [(ngModel)]="customer.Password" name="Password" required />
+        <input type="password" placeholder="Confirm Password" [(ngModel)]="customer.ConfirmPassword" name="ConfirmPassword" required />
+        <button type="submit">Sign Up</button>
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+        <div>
+            <p>Already have an account?</p>
+          <button class="ghost" (click)="navigateToSignIn()">Sign In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

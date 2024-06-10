@@ -1,0 +1,18 @@
+<!-- src/app/signin/signin.component.html -->
+<div class="container">
+    <div class="form-container sign-in-container">
+      <form (ngSubmit)="onSignInSubmit()">
+        <h1>Sign In</h1>
+        <input type="email" placeholder="Email" [(ngModel)]="signInRequest.Email" name="Email" required />
+        <input type="password" placeholder="Password" [(ngModel)]="signInRequest.Password" name="Password" required />
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+        <button type="submit">Sign In</button>
+        <p>Don't have an account?</p>
+          <button class="ghost" (click)="navigateToSignUp()">Sign Up</button>
+      </form>
+    </div>
+    
+  </div>
+  
